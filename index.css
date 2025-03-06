@@ -1,0 +1,113 @@
+/*CSS Reset*/
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    /*Hides the  bottom scrollbar*/
+    overflow: hidden;
+    background-color: rgba(0, 255, 0, 0.089);
+}
+/*Styling of the Game's Name*/
+#gameName{
+    position: absolute;
+    top: 5px;
+    left: 24vw;
+    background-color: rgba(20, 31, 185, 0.19);
+    font-weight: bold;
+    font-size: 4rem;
+    padding: 20px;
+    border-radius: 20px;
+    color: rgba(13, 25, 14, 0.945);
+
+}
+/*Background image styling*/
+.container{
+    /* background-image: url(./images/cover.png); */
+    background-size:cover;
+    width:100vw;
+    height:100vh;
+}
+
+.design {
+    position:absolute;
+    top: 120px;
+    right: 55px;
+    background-color: rgba(18, 19, 69, 0.892);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+/*ScoreCard Styling*/
+#scorecount{
+    position:absolute;
+    top:20px;
+    right:20px;
+    background-color: black;
+    padding: 28px;
+    border-radius: 20px;
+    color: white;
+}
+/*Obstacle image styling and postioning*/
+.obstacle{
+    background-image: url(./images/obstacle.png);
+    background-size: cover;
+    width:154px;
+    height: 117px;
+    position:absolute;
+    bottom:100px;
+    right:-200px;
+}
+/*Applying aniamation to the obstacle so that it can move towards left*/
+.animateobstacle{
+    animation: aniob 3s linear infinite;
+}
+@keyframes aniob{
+    0%{
+        left:100vw;
+    }
+     50%{
+        left:-10vw;
+    }
+}
+/*Dragon's styling*/
+.dragon{
+    background-image: url(./images/dragon.png);
+    background-size: cover;
+    width: 194px;
+    height: 101px;
+    position:absolute;
+    bottom:100px;
+    left:90px;
+}
+/*Applying animation to the dragon so that it can save himself by jumping up*/
+.animatedragon {
+    animation: ani 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) alternate; 
+}
+@keyframes ani {
+    0% {
+        bottom: 100px; /* Start Position */
+    }
+    50% {
+        bottom: 600px; /* Jump Fast */
+    }
+    100% {
+        bottom: 100px; /* Come Down Fast */
+    }
+}
+/*gameover styling and positioning*/
+.gameover{
+    visibility: hidden;
+    font-family: 'Ubuntu', sans-serif;
+    position:absolute;
+    top:30vh;
+    left:35vw;
+    color:rgb(170, 2, 2);
+    font-weight:bold;
+    font-size: 6rem;
+    background-color: rgb(34, 178, 147);
+    border-radius: 20px;
+    padding: 10px;
+}
